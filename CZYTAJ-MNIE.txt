@@ -1,0 +1,5 @@
+1. Wrzuc wszystkie pliki z tego folderu na GitHub (repozytorium "nova").
+2. Settings -> Pages -> Branch: main, folder: / (root) -> Save.
+3. Po minucie adres bedzie: https://TWOJA-NAZWA.github.io/nova/
+4. W panelu Spotify (Redirect URIs) dodaj dokladnie ten adres, z ukosnikiem na koncu.
+5. Otworz adres w Edge -> "..." -> Aplikacje -> Zainstaluj ta witryne jako aplikacje.
