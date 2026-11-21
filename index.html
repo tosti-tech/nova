@@ -738,7 +738,7 @@ async function loadLiked(tok, off) {
       box.append(m);
     } else if (!box.children.length) box.textContent = 'Nie masz jeszcze polubionych utworów.';
     markNow(); paintLike();
-  } catch (e) { box.textContent = /^403/.test(e.message) ? 'Brak uprawnień. Wyloguj się i zaloguj ponownie.' : 'Nie udało się wczytać polubionych (' + e.message + ').'; }
+  } catch (e) { box.textContent = 'Błąd Spotify: ' + e.message; }
 }
 
 /* ---------- tekst piosenki (lrclib.net) ---------- */
@@ -1353,7 +1353,7 @@ async function showPlaylists() {
     folders.forEach(f => L.append(folderEl(f, byId)));
     myPls.filter(p => !folderOf(p.id)).forEach(p => plRow(p, L));
     myPls.slice(0, 4).forEach((p, k) => setTimeout(() => plPrefetch(p), 600 + k * 300));
-  } catch (e) { L.append(Object.assign(document.createElement('div'), { className: 'sec', textContent: 'Nie udało się wczytać playlist.' })); }
+  } catch (e) { L.append(Object.assign(document.createElement('div'), { className: 'sec', textContent: 'Nie udało się wczytać playlist. Błąd Spotify: ' + e.message })); }
 }
 /* ---------- tworzenie playlist i dodawanie utworów ---------- */
 let myPls = [];
